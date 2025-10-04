@@ -1,13 +1,18 @@
-import { useState } from 'react'
 import Map from './components/Map'
+import Card from './components/Card'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Map />
-    </>
+    <div className='container'>
+      <div className='cards-section'>
+        <Card />
+      </div>
+      <div className='map-section'>
+        <Map />
+      </div>
+    </div>
   )
 }
 

@@ -5,6 +5,7 @@ import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import { getColorByAQI } from '../utils/getColorByAQI';
+import { getAQILevel } from '../utils/getAQILevel';
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
