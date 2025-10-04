@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-
+import { useState, useRef } from 'react';
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -17,7 +17,18 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 
 const Map = () => {
-    const position = [-8.057958, -34.949519];
+    const [position, setPosition] = useState([-8.057958, -34.949519]);
+    const markerRef = useRef(null);
+
+    const eventHandlers = {
+        dragend() {
+            const marker = markerRef.current;
+            if (marker != null) {
+                const newPos = marker.getLatLng();
+                setPosition([newPos.lat, newPos.lng]);
+            }
+        },
+    };
 
     return (
         <MapContainer
@@ -30,9 +41,15 @@ const Map = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <Marker position={position}>
+            <Marker
+                position={position}
+                draggable={true}
+                eventHandlers={eventHandlers}
+                ref={markerRef}
+            >
                 <Popup>
                     Marcador \o/ <br />
+                    Lat: {position[0].toFixed(6)}, Lng: {position[1].toFixed(6)}
                 </Popup>
             </Marker>
         </MapContainer>
