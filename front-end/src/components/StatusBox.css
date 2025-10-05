@@ -59,7 +59,7 @@
 }
 
 .status-box .card.red {
-    background-color: rgba(231, 76, 60, 0.15);
+    background-color: rgba(210, 68, 52, 0.744);
     border: 1px solid var(--color-bad);
     color: var(--color-bad);
 }

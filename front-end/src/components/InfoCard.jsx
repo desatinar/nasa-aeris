@@ -4,7 +4,7 @@ const InfoCard = () => {
     return (
         <div className="info-card">
             <div className="info-content">
-                <h3>Important Facts</h3>
+                <h3>Health Facts</h3>
                 <p>
                     Prolonged exposure to PM2.5 particles can cause airway inflammation, reduce lung function, and worsen conditions like Chronic Obstructive Pulmonary Disease (COPD).
                 </p>
