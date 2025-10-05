@@ -1,0 +1,93 @@
+.pollutants {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background-color: var(--bg-card);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.pollutants h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.pollutant {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+}
+
+.pollutant:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.pollutant span {
+    min-width: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    text-align: right;
+    letter-spacing: 0.5px;
+}
+
+.bar {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar div {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.6s ease;
+    position: relative;
+}
+
+.bar div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#pm-bar {
+    background: linear-gradient(90deg, var(--color-good), #34C759);
+    width: 20%;
+}
+
+#co2-bar {
+    background: linear-gradient(90deg, var(--color-moderate), #FFCC00);
+    width: 80%;
+}
+
+#o3-bar {
+    background: linear-gradient(90deg, var(--color-bad), #FF3B30);
+    width: 35%;
+}

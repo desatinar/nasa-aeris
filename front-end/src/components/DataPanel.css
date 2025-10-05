@@ -1,89 +1,156 @@
 .data-panel {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: var(--bg-card);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-card);
+    position: relative;
 }
 
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 .panel-header h3 {
     margin: 0;
-    color: #333;
+    color: var(--text-primary);
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .period-select {
-    padding: 0.4rem 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: white;
-    color: #666;
-    font-size: 0.9rem;
+    padding: 8px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-primary);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.period-select:hover {
+    border-color: var(--accent-primary);
+}
+
+.period-select:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1);
 }
 
 .aqi-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(74, 98, 163, 0.08);
+    border: 1px solid rgba(74, 98, 163, 0.2);
+    border-radius: var(--radius-md);
 }
 
 .aqi-value {
     display: flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .aqi-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #66bb6a;
+    color: var(--text-primary);
+    line-height: 1;
 }
 
 .aqi-label {
+    color: var(--text-secondary);
     font-size: 1rem;
-    color: #888;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .aqi-status {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
+    gap: var(--spacing-xs);
+    font-weight: 600;
     font-size: 0.9rem;
 }
 
 .aqi-status.good {
-    background: #e8f5e9;
-    color: #43a047;
+    color: var(--color-good);
+}
+
+.aqi-status.moderate {
+    color: var(--color-moderate);
+}
+
+.aqi-status.bad {
+    color: var(--color-bad);
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #43a047;
+    animation: pulse 2s infinite;
+}
+
+.aqi-status.good .status-dot {
+    background: var(--color-good);
+    box-shadow: 0 0 10px var(--color-good);
+}
+
+.aqi-status.moderate .status-dot {
+    background: var(--color-moderate);
+    box-shadow: 0 0 10px var(--color-moderate);
+}
+
+.aqi-status.bad .status-dot {
+    background: var(--color-bad);
+    box-shadow: 0 0 10px var(--color-bad);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
 }
 
 .chart-container {
-    margin: 1.5rem 0;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .nasa-logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
 }
 
 .nasa-logo img {
-    height: 50px;
-    width: auto;
+    height: 28px;
+    opacity: 0.4;
+    filter: none;
+    transition: opacity 0.3s ease;
+}
+
+.nasa-logo img:hover {
+    opacity: 0.7;
 }

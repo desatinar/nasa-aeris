@@ -1,0 +1,78 @@
+.status-box-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-box {
+    background: var(--bg-card);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: border-color 0.3s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.status-box h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.status-box p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.status-box .card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    cursor: default;
+    margin-top: var(--spacing-xs);
+}
+
+.status-box .card.green {
+    background-color: rgba(46, 204, 113, 0.15);
+    border: 1px solid var(--color-good);
+    color: var(--color-good);
+}
+
+.status-box .card.yellow {
+    background-color: rgba(241, 196, 15, 0.15);
+    border: 1px solid var(--color-moderate);
+    color: var(--color-moderate);
+}
+
+.status-box .card.red {
+    background-color: rgba(231, 76, 60, 0.15);
+    border: 1px solid var(--color-bad);
+    color: var(--color-bad);
+}
+
+/* Dynamic border color for status box */
+.status-box[data-status="good"] {
+    border-color: var(--color-good);
+}
+
+.status-box[data-status="moderate"] {
+    border-color: var(--color-moderate);
+}
+
+.status-box[data-status="bad"] {
+    border-color: var(--color-bad);
+}

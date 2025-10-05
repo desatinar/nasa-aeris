@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import './DataPanel.css';
 
 const DataPanel = () => {
-    // Dados de exemplo para o gráfico
+    // Sample data for the chart
     const data = [
         { time: '00:00', value: 45 },
         { time: '04:00', value: 42 },
@@ -17,9 +17,9 @@ const DataPanel = () => {
             <div className="panel-header">
                 <h3>Data Period</h3>
                 <select className="period-select">
-                    <option>Últimos 7 dias</option>
-                    <option>Últimos 30 dias</option>
-                    <option>Último ano</option>
+                    <option>Last 7 days</option>
+                    <option>Last 30 days</option>
+                    <option>Last year</option>
                 </select>
             </div>
 
@@ -30,21 +30,33 @@ const DataPanel = () => {
                 </div>
                 <div className="aqi-status good">
                     <span className="status-dot"></span>
-                    <span>Boa qualidade</span>
+                    <span>Good quality</span>
                 </div>
             </div>
 
             <div className="chart-container">
                 <ResponsiveContainer width="100%" height={150}>
                     <LineChart data={data}>
-                        <XAxis dataKey="time" stroke="#888" fontSize={12} />
-                        <YAxis stroke="#888" fontSize={12} />
+                        <XAxis
+                            dataKey="time"
+                            stroke="#6C757D"
+                            fontSize={11}
+                            tickLine={false}
+                            axisLine={{ stroke: '#E0E0E0' }}
+                        />
+                        <YAxis
+                            stroke="#6C757D"
+                            fontSize={11}
+                            tickLine={false}
+                            axisLine={{ stroke: '#E0E0E0' }}
+                        />
                         <Line
                             type="monotone"
                             dataKey="value"
-                            stroke="#66bb6a"
-                            strokeWidth={2}
-                            dot={{ fill: '#66bb6a', r: 4 }}
+                            stroke="#4A62A3"
+                            strokeWidth={3}
+                            dot={{ fill: '#4A62A3', r: 5, strokeWidth: 2, stroke: '#FFFFFF' }}
+                            activeDot={{ r: 7, stroke: '#3A5293', strokeWidth: 2 }}
                         />
                     </LineChart>
                 </ResponsiveContainer>

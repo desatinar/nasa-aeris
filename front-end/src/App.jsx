@@ -1,8 +1,9 @@
 import Header from './components/Header';
 import Map from './components/Map';
+import StatusBox from './components/StatusBox';
+import Pollutants from './components/Pollutants';
 import DataPanel from './components/DataPanel';
-import StatusCards from './components/StatusCards';
-import TipsSection from './components/TipsSection';
+import InfoCard from './components/InfoCard';
 import './App.css';
 
 function App() {
@@ -10,17 +11,18 @@ function App() {
     <div className="app">
       <Header />
 
-      <div className="main-container">
-        <div className="map-section">
+      <main className="main-content">
+        <section id="map" className="map-section">
           <Map />
-        </div>
+        </section>
 
-        <div className="sidebar">
+        <aside className="sidebar">
+          <StatusBox />
+          <Pollutants />
           <DataPanel />
-          <StatusCards />
-          <TipsSection />
-        </div>
-      </div>
+          <InfoCard />
+        </aside>
+      </main>
     </div>
   );
 }

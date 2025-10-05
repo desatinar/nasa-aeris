@@ -1,43 +1,150 @@
 .header {
-    background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    max-width: 1400px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--bg-secondary);
+    padding: 16px var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    gap: var(--spacing-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
 }
 
 .logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-on-brand);
+    white-space: nowrap;
+    letter-spacing: -0.5px;
 }
 
-.header-actions {
+.search-container {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+    max-width: 600px;
 }
 
-.icon-button {
-    background: rgba(255, 255, 255, 0.2);
+.search-container input {
+    flex: 1;
+    padding: 10px 16px;
+    padding-left: 40px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 400;
+    outline: none;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236C757D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 18px;
+}
+
+.search-container input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-container input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+#btn-search {
+    padding: 10px 24px;
     border: none;
-    color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    border-radius: var(--radius-md);
+    background-color: var(--accent-primary);
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+#btn-search:hover {
+    background-color: var(--accent-hover);
+}
+
+#btn-search:active {
+    transform: scale(0.98);
+}
+
+.accessibility-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-on-brand);
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.2s ease;
 }
 
-.icon-button:hover {
+.control-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.3);
+}
+
+.control-btn.active {
+    border-color: var(--text-on-brand);
+    background: var(--text-on-brand);
+    color: var(--accent-primary);
+}
+
+.control-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 12px var(--spacing-sm);
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .search-container {
+        order: 3;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .search-container input {
+        font-size: 0.85rem;
+        padding: 8px 14px 8px 36px;
+    }
+
+    #btn-search {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+
+    .accessibility-controls {
+        margin-left: auto;
+    }
+
+    .control-btn {
+        width: 36px;
+        height: 36px;
+    }
 }
