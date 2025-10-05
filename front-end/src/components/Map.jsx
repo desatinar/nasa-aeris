@@ -2,20 +2,18 @@ import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useState, useRef } from 'react';
 import L from 'leaflet';
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import { MapPin } from 'lucide-react';
 import { getColorByAQI } from '../utils/getColorByAQI';
 import { getAQILevel } from '../utils/getAQILevel';
+import './Map.css';
 
-let DefaultIcon = L.icon({
-    iconUrl: icon,
-    shadowUrl: iconShadow,
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
+// Fix para os ícones do Leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
-L.Marker.prototype.options.icon = DefaultIcon;
 
 
 const Map = () => {
@@ -39,50 +37,61 @@ const Map = () => {
     };
 
     return (
-        <MapContainer
-            center={position}
-            zoom={13}
-            style={{ height: '600px', width: '100%' }}
-        >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+        <div className="map-wrapper">
+            <div className="map-search">
+                <MapPin size={18} />
+                <input type="text" placeholder="Buscar localização..." />
+            </div>
 
-            <Marker
-                position={position}
-                draggable={true}
-                eventHandlers={eventHandlers}
-                ref={markerRef}
+            <MapContainer
+                center={position}
+                zoom={13}
+                className="map-container"
+                scrollWheelZoom={true}
             >
-                <Popup>
-                    Marcador \o/ <br />
-                    Lat: {position[0].toFixed(6)}, Lng: {position[1].toFixed(6)}
-                </Popup>
-            </Marker>
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
 
-            {/* Círculos coloridos para cada ponto de medição de qualidade do ar */}
-            {airQualityData.map((data, index) => (
-                <Circle
-                    key={index}
-                    center={data.position}
-                    radius={2000} // Raio em metros
-                    pathOptions={{
-                        color: getColorByAQI(data.aqi),
-                        fillColor: getColorByAQI(data.aqi),
-                        fillOpacity: 0.4,
-                        weight: 2
-                    }}
+                <Marker
+                    position={position}
+                    draggable={true}
+                    eventHandlers={eventHandlers}
+                    ref={markerRef}
                 >
                     <Popup>
-                        <strong>{data.name}</strong><br />
-                        AQI: {data.aqi}<br />
-                        Qualidade: {getAQILevel(data.aqi)}<br />
-                        Lat: {data.position[0].toFixed(6)}, Lng: {data.position[1].toFixed(6)}
+                        <div className="popup-content">
+                            <strong>Sua Localização</strong>
+                            <p>Lat: {position[0].toFixed(6)}, Lng: {position[1].toFixed(6)}</p>
+                        </div>
                     </Popup>
-                </Circle>
-            ))}
-        </MapContainer>
+                </Marker>
+
+                {/* Círculos coloridos para cada ponto de medição de qualidade do ar */}
+                {airQualityData.map((data, index) => (
+                    <Circle
+                        key={index}
+                        center={data.position}
+                        radius={2000}
+                        pathOptions={{
+                            color: getColorByAQI(data.aqi),
+                            fillColor: getColorByAQI(data.aqi),
+                            fillOpacity: 0.4,
+                            weight: 2
+                        }}
+                    >
+                        <Popup>
+                            <div className="popup-content">
+                                <strong>{data.name}</strong>
+                                <p>AQI: {data.aqi}</p>
+                                <p>Qualidade: {getAQILevel(data.aqi)}</p>
+                            </div>
+                        </Popup>
+                    </Circle>
+                ))}
+            </MapContainer>
+        </div>
     );
 };
 

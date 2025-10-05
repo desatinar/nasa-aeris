@@ -1,0 +1,58 @@
+.map-wrapper {
+    position: relative;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-search {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    background: white;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.map-search input {
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    width: 200px;
+}
+
+.map-search input::placeholder {
+    color: #999;
+}
+
+.map-container {
+    height: 600px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.custom-marker {
+    background: none;
+    border: none;
+}
+
+.popup-content {
+    padding: 0.5rem;
+}
+
+.popup-content strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.popup-content p {
+    margin: 0;
+    color: #666;
+}

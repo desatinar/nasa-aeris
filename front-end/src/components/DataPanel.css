@@ -1,0 +1,89 @@
+.data-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.panel-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.period-select {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    color: #666;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.aqi-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.aqi-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.aqi-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #66bb6a;
+}
+
+.aqi-label {
+    font-size: 1rem;
+    color: #888;
+}
+
+.aqi-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.aqi-status.good {
+    background: #e8f5e9;
+    color: #43a047;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #43a047;
+}
+
+.chart-container {
+    margin: 1.5rem 0;
+}
+
+.nasa-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.nasa-logo img {
+    height: 50px;
+    width: auto;
+}
