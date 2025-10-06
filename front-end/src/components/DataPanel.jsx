@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import './DataPanel.css';
 
 const DataPanel = () => {
+    const [dataMode, setDataMode] = useState('historical');
+
     // Sample data for the chart
     const data = [
         { time: '00:00', value: 45 },
@@ -14,6 +17,21 @@ const DataPanel = () => {
 
     return (
         <div className="data-panel">
+            <div className="mode-toggle">
+                <button
+                    className={`mode-btn ${dataMode === 'historical' ? 'active' : ''}`}
+                    onClick={() => setDataMode('historical')}
+                >
+                    Historical Data
+                </button>
+                <button
+                    className={`mode-btn ${dataMode === 'forecast' ? 'active' : ''}`}
+                    onClick={() => setDataMode('forecast')}
+                >
+                    AI Forecast
+                </button>
+            </div>
+
             <div className="panel-header">
                 <h3>Data Period</h3>
                 <select className="period-select">

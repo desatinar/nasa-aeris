@@ -14,7 +14,7 @@ const Header = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.length === 0) {
-                    alert("Local não encontrado!");
+                    alert("Location not found!");
                     return;
                 }
                 const lat = parseFloat(data[0].lat);
@@ -25,7 +25,7 @@ const Header = () => {
                 }));
             })
             .catch(() => {
-                alert("Erro ao buscar o local.");
+                alert("Error searching location.");
             });
     };
 

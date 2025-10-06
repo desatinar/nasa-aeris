@@ -87,10 +87,11 @@ const StatusBox = () => {
                                 emoji: "😷",
                                 title: "Poor!",
                                 message: "Avoid outdoor activities. Risk groups should stay in closed and well-ventilated environments. Athletes should suspend intense outdoor training.",
-                                background: "#da7474ff",
+                                background: "#E74C3C",
                                 borderColor: "#ef4444",
                                 cardText: "Potentially hazardous air",
-                                cardColor: "red"
+                                cardColor: "red",
+                                textColor: "#212529"
                             });
                         }
                         updatePollutantBars(aqi);
@@ -129,9 +130,9 @@ const StatusBox = () => {
     return (
         <div className="status-box-container">
             <div className="status-box" style={{ background: status.background, borderColor: status.borderColor }}>
-                <h2>{status.emoji} {status.title}</h2>
-                <p>{status.message}</p>
-                <div className={`card ${status.cardColor}`} style={{ borderRadius: '8px', background: status.borderColor, color: '#fff', padding: '8px', textAlign: 'center' }}>
+                <h2 style={{ color: status.textColor || 'var(--text-primary)' }}>{status.emoji} {status.title}</h2>
+                <p style={{ color: status.textColor || 'var(--text-secondary)' }}>{status.message}</p>
+                <div className={`card ${status.cardColor}`} style={{ borderRadius: '8px', background: status.borderColor, color: status.textColor || '#fff', padding: '8px', textAlign: 'center' }}>
                     {status.cardText}
                 </div>
             </div>

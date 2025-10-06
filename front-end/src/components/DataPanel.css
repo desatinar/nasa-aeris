@@ -7,6 +7,40 @@
     position: relative;
 }
 
+.mode-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: var(--spacing-md);
+    background: rgba(74, 98, 163, 0.08);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(74, 98, 163, 0.15);
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.mode-btn:hover {
+    background: rgba(74, 98, 163, 0.1);
+}
+
+.mode-btn.active {
+    background: #4A62A3;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(74, 98, 163, 0.2);
+}
+
 .panel-header {
     display: flex;
     justify-content: space-between;
