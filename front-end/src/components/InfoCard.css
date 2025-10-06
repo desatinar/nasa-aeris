@@ -23,7 +23,7 @@
 }
 
 .info-content h3::before {
-    content: '💡';
+    content: '😷';
     font-size: 1.4rem;
 }
 

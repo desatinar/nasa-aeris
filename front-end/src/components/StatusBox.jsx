@@ -87,7 +87,7 @@ const StatusBox = () => {
                                 emoji: "😷",
                                 title: "Poor!",
                                 message: "Avoid outdoor activities. Risk groups should stay in closed and well-ventilated environments. Athletes should suspend intense outdoor training.",
-                                background: "#fee2e2",
+                                background: "#da7474ff",
                                 borderColor: "#ef4444",
                                 cardText: "Potentially hazardous air",
                                 cardColor: "red"
