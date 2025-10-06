@@ -20,14 +20,12 @@ const StatusBox = () => {
                 { name: "Cidade Universitária", position: [-8.0507, -34.9509], aqi: 175 },
             ];
 
-            // Try to get user location via geolocation
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (pos) => {
                         const userLat = pos.coords.latitude;
                         const userLng = pos.coords.longitude;
 
-                        // Function to calculate haversine distance between two coordinates
                         const calculateDistance = (lat1, lon1, lat2, lon2) => {
                             const R = 6371;
                             const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -40,7 +38,6 @@ const StatusBox = () => {
                             return R * c;
                         };
 
-                        // Find the closest station
                         let closestStation = airQualityData[0];
                         let minDistance = Infinity;
 
@@ -59,7 +56,6 @@ const StatusBox = () => {
                         console.log(`User at [${userLat.toFixed(4)}, ${userLng.toFixed(4)}]`);
                         console.log(`Closest station: ${closestStation.name} - AQI: ${closestStation.aqi} - Distance: ${minDistance.toFixed(2)}km`);
 
-                        // Determine status based on closest station AQI
                         const aqi = closestStation.aqi;
 
                         if (aqi <= 50) {
@@ -118,10 +114,8 @@ const StatusBox = () => {
             document.getElementById("o3-bar")?.style.setProperty("width", o3 + "%");
         };
 
-        // Determine initial status
         determineStatusFromLocation();
 
-        // Update every 30 seconds
         const interval = setInterval(determineStatusFromLocation, 30000);
 
         return () => clearInterval(interval);

@@ -13,7 +13,6 @@ const Map = () => {
         const marker = L.marker([-8.05, -34.9]).addTo(map);
         marker.bindPopup("<b>You are here!</b>").openPopup();
 
-        // Geolocation
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (pos) => {
@@ -28,7 +27,6 @@ const Map = () => {
             );
         }
 
-        // Helper functions
         function getColorByAQI(aqi) {
             if (aqi <= 50) return "#2ECC71";
             if (aqi <= 100) return "#F1C40F";
@@ -47,7 +45,6 @@ const Map = () => {
             return "Hazardous";
         }
 
-        // Air quality data
         const airQualityData = [
             { name: "Ouro Preto", position: [-7.9967, -34.8615], aqi: 45 },
             { name: "Madalena", position: [-8.05, -34.9], aqi: 110 },
@@ -87,7 +84,6 @@ const Map = () => {
 
         window.addEventListener('locationSearch', handleLocationSearch);
 
-        // Cleanup
         return () => {
             window.removeEventListener('locationSearch', handleLocationSearch);
             map.remove();

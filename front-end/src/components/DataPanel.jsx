@@ -5,7 +5,6 @@ import './DataPanel.css';
 const DataPanel = () => {
     const [dataMode, setDataMode] = useState('historical');
 
-    // Sample data for the chart
     const data = [
         { time: '00:00', value: 45 },
         { time: '04:00', value: 42 },
