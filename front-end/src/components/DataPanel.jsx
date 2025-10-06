@@ -5,7 +5,7 @@ import './DataPanel.css';
 const DataPanel = () => {
     const [dataMode, setDataMode] = useState('historical');
 
-    const data = [
+    const historicalData = [
         { time: '00:00', value: 45 },
         { time: '04:00', value: 42 },
         { time: '08:00', value: 48 },
@@ -13,6 +13,30 @@ const DataPanel = () => {
         { time: '16:00', value: 52 },
         { time: '20:00', value: 47 },
     ];
+
+    const aiForecastData = [
+        { time: 'Now', value: 47 },
+        { time: '+4h', value: 52 },
+        { time: '+8h', value: 60 },
+        { time: '+12h', value: 68 },
+        { time: '+16h', value: 62 },
+        { time: '+20h', value: 55 },
+        { time: '+24h', value: 50 },
+    ];
+
+    const dataForGraph = dataMode === 'historical' ? historicalData : aiForecastData;
+
+    const currentAQI = dataMode === 'historical'
+        ? historicalData[historicalData.length - 1].value
+        : aiForecastData[0].value;
+
+    const getAQIStatus = (aqi) => {
+        if (aqi <= 50) return { label: 'Good quality', class: 'good' };
+        if (aqi <= 100) return { label: 'Moderate', class: 'moderate' };
+        return { label: 'Poor quality', class: 'bad' };
+    };
+
+    const aqiStatus = getAQIStatus(currentAQI);
 
     return (
         <div className="data-panel">
@@ -42,18 +66,18 @@ const DataPanel = () => {
 
             <div className="aqi-info">
                 <div className="aqi-value">
-                    <span className="aqi-number">45</span>
+                    <span className="aqi-number">{currentAQI}</span>
                     <span className="aqi-label">AQI</span>
                 </div>
-                <div className="aqi-status good">
+                <div className={`aqi-status ${aqiStatus.class}`}>
                     <span className="status-dot"></span>
-                    <span>Good quality</span>
+                    <span>{aqiStatus.label}</span>
                 </div>
             </div>
 
             <div className="chart-container">
                 <ResponsiveContainer width="100%" height={150}>
-                    <LineChart data={data}>
+                    <LineChart data={dataForGraph}>
                         <XAxis
                             dataKey="time"
                             stroke="#6C757D"
