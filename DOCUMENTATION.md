@@ -74,6 +74,30 @@ Theme switcher (Light/Dark mode), high-contrast toggle, and keyboard navigation 
 
 ---
 
+##Future Improvements
+
+### 1. User Interaction and Community Reporting:
+Allow users to report real-time environmental events, such as fires, gas leaks, or other local pollution sources. These community inputs could enrich the accuracy of air quality data and make the app more participatory.
+
+
+### 2. Integration with Environmental Stakeholders:
+Connect Aeris with governmental and institutional partners, such as environmental agencies and health departments, to share verified data, improve decision-making, and promote environmental awareness campaigns.
+
+
+
+### 3. Historical vs. AI Forecast Toggle:
+A unique segmented control within the “Data Period” card will allow users to seamlessly switch between historical air quality trends and AI-powered forecasts. This feature enables users to understand past pollution patterns and anticipate future conditions, supporting better planning for outdoor activities, travel, and health management. The toggle will be visually distinct, highlighting the active mode with the app’s primary accent color.
+
+
+### 4.Extended API Integration:
+Include additional data sources for meteorology, public health, and emergency notifications.
+
+### 5. Accessibility Controls
+Theme switcher (Light/Dark mode), high-contrast toggle, and keyboard navigation support. All interactive elements have ARIA labels.
+
+### 6. User Dashboard:
+Provide users with a personalized dashboard to track favorite locations, historical data, and health-based recommendations.
+
 ## Design System
 
 ### Color Palette
