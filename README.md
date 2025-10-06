@@ -1,161 +1,98 @@
-# Aeris – Air Quality Monitoring Dashboard
+# Aeris: Air Quality Dashboard
 
 <div align="center">
 
 ![Aeris Dashboard](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-19.1.1-blue?style=for-the-badge&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?style=for-the-badge&logo=vite)
-![License](https://img.shields.io/badge/License-TBD-yellow?style=for-the-badge)
 
-**A modern, accessible web application for real-time air quality monitoring and forecasting**
+**Real-time air quality monitoring for informed health decisions**
 
-[Live Demo](https://nasa-aeris-bno6pw5j4-desatinars-projects.vercel.app/) • [Documentation](./DOCUMENTATION.md) • [Contributing](#contributing)
+[Live Demo](https://nasa-aeris.vercel.app/) • [Documentation](./DOCUMENTATION.md)
 
 </div>
 
 ---
 
-## 🌍 Overview
+## Overview
 
-**Aeris** is a sophisticated air quality monitoring dashboard conceived during the **2025 NASA Space Apps Challenge**. The application transforms complex environmental data into clear, actionable insights for two critical user groups: **individuals with respiratory conditions** (asthma, COPD, allergies) and **outdoor athletes** (runners, cyclists, hikers).
-
-Built with React and powered by NASA AERIS-inspired atmospheric research principles, Aeris provides real-time air quality measurements, historical trend analysis, and AI-powered forecasts through an intuitive, map-based interface.
-
-### ✨ Key Features
-
-- 🗺️ **Interactive Map Visualization** – Color-coded air quality zones with detailed station data
-- 📊 **Real-Time Dashboard** – Live AQI readings and pollutant level breakdowns
-- 🔮 **Historical & AI Forecast Toggle** – Switch between past trends and future predictions
-- 🚨 **Smart Alert System** – High-contrast warnings for hazardous air quality
-- 🎨 **Customizable Interface** – Theme switcher and accessibility controls
-- ♿ **WCAG Compliant** – Built with accessibility as a core principle
+Aeris is an air quality monitoring dashboard created for the **2025 NASA Space Apps Challenge**. It transforms complex atmospheric data into actionable insights, helping **outdoor athletes** and **individuals with respiratory conditions** (asthma, COPD, allergies) make informed decisions about outdoor activities and health precautions. Built with React and Leaflet.js, Aeris provides real-time air quality measurements, historical trends, and AI-powered forecasts through an intuitive map-based interface.
 
 ---
 
-## 🚀 Quick Start
+## Core Features
 
-### Prerequisites
+* **Interactive Map:** Visually displays real-time air quality data for the user's local area with color-coded zones.
+* **Data Dashboard:** Presents key metrics like AQI and pollutant levels in a simple, easy-to-read format.
+* **Predictive Toggle:** A unique switch allows users to compare historical data against AI-powered future forecasts.
+* **Health Alerts:** Automatically highlights dangerous conditions with high-contrast warnings to help users take necessary precautions.
+* **Community Reporting:** *(Future)* Users will be able to report local pollution events like fires or gas leaks.
+* **Personalization:** *(Future)* A planned user dashboard for tracking favorite locations and receiving tailored advice.
 
-- Node.js 18.x or later
-- npm or yarn
+---
 
-### Installation
+## Technology Stack
 
-```bash
-# Clone the repository
-git clone https://github.com/desatinar/nasa-aeris.git
+* **Framework:** React 19
+* **Build Tool:** Vite 7
+* **Mapping:** Leaflet.js & React-Leaflet
+* **Charts:** Recharts
+* **Styling:** CSS Variables
 
-# Navigate to the front-end directory
-cd nasa-aeris/front-end
+---
 
-# Install dependencies
-npm install
+## Quick Start
 
-# Start the development server
-npm run dev
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/desatinar/nasa-aeris.git
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   cd nasa-aeris/front-end && npm install
+   ```
+
+3. **Run the app:**
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🛠️ Technology Stack
+## Project Roadmap
 
-- **Framework:** React 19 with Hooks
-- **Build Tool:** Vite 7
-- **Mapping:** Leaflet.js + React-Leaflet
-- **Charts:** Recharts
-- **Styling:** CSS Variables + Custom Design System
-- **Icons:** Lucide React
-
----
-
-## 📖 Documentation
-
-For comprehensive documentation including design system, component architecture, and API integration guides, see **[DOCUMENTATION.md](./DOCUMENTATION.md)**.
+* Integrate a live data feed from a real-world API (OpenAQ/AirNow)
+* Implement a fully functional Light/Dark mode theme switcher
+* Develop the planned user dashboard for personalization
+* Build out the community reporting functionality
+* Add mobile responsive design
+* Enable push notifications for air quality alerts
 
 ---
 
-## 🎨 Design System
+## Design Highlights
 
-Aeris features a distinctive branded design:
-
-- **Custom Light Theme:** Unique `#94a5d6` blue background
-- **High-Contrast Alerts:** Dark text on colored backgrounds for accessibility
-- **Semantic Colors:** Intuitive green/yellow/red status indicators
-- **Typography:** Inter font family optimized for readability
-- **Responsive:** Desktop-optimized with mobile-friendly roadmap
+* **Custom Light Theme:** Distinctive `#94a5d6` blue background
+* **Accessibility-First:** WCAG 2.1 AA compliant with high-contrast alerts
+* **Semantic Colors:** Intuitive green/yellow/red air quality indicators
+* **Typography:** Inter font for optimal readability
 
 ---
 
-## 🧩 Project Structure
+## Contributing
 
-```
-nasa-aeris/
-├── back-end/           # Python API server (optional)
-├── front-end/
-│   ├── src/
-│   │   ├── components/ # React components
-│   │   ├── assets/     # Static resources
-│   │   ├── App.jsx     # Root component
-│   │   └── main.jsx    # Entry point
-│   └── package.json
-├── DOCUMENTATION.md    # Comprehensive documentation
-└── README.md          # This file
-```
+We welcome contributions from developers, designers, and environmental advocates. Please see [DOCUMENTATION.md](./DOCUMENTATION.md) for code standards and contribution guidelines.
 
 ---
 
-## 🗺️ Roadmap
+## Contact
 
-- [x] Interactive map with geolocation
-- [x] Real-time AQI display
-- [x] Historical/AI Forecast toggle
-- [x] Accessibility-first design
-- [ ] Full dark mode implementation
-- [ ] Live API integration (OpenAQ/AirNow)
-- [ ] Mobile responsive design
-- [ ] User accounts & preferences
-- [ ] Push notifications
-- [ ] Multi-language support
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](./DOCUMENTATION.md#11-contributing) for details on:
-
-- Code standards and style guide
-- Component architecture patterns
-- Testing requirements
-- Pull request process
-
----
-
-## 📄 License
-
-License to be determined. This project is developed for environmental monitoring and public health purposes.
-
----
-
-## 🙏 Acknowledgments
-
-Born from the **2025 NASA Space Apps Challenge** and inspired by NASA's AERIS program:
-
-- **NASA Space Apps Challenge 2025** for the platform and mission
-- **NASA AERIS Program** for atmospheric research insights
-- **OpenStreetMap** for mapping data
-- **OpenAQ** for air quality data accessibility
-- **React and Leaflet.js communities** for exceptional open-source tools
-
----
-
-## 📧 Contact
-
-For questions or support:
-
-- **Issues:** [GitHub Issues](https://github.com/desatinar/nasa-aeris/issues)
-- **Email:** astro.rec00@gmail.com
+* **Live Demo:** [nasa-aeris.vercel.app](https://nasa-aeris.vercel.app/)
+* **Issues:** [GitHub Issues](https://github.com/desatinar/nasa-aeris/issues)
+* **Email:** astro.rec00@gmail.com
 
 ---
 
@@ -163,7 +100,5 @@ For questions or support:
 
 **Built with 💙 for a cleaner, healthier planet**  
 *A 2025 NASA Space Apps Challenge Project*
-
-[⬆ Back to Top](#aeris--air-quality-monitoring-dashboard)
 
 </div>
