@@ -21,6 +21,10 @@
 * **State Management:** React Hooks (useState, useEffect)
 
 ---
+## API Integration (Future)
+Currently, Aeris uses mock data hardcoded directly into the components for demonstration purposes. This approach allows us to showcase the application's features and user interface without requiring a live data source.
+
+Our immediate roadmap includes replacing this static data with real-time information. We are actively developing an API to serve data from various sources. Once integrated, the application will fetch real-world air quality data based on the user's location, ensuring that all metrics—including real-time AQI values, pollutant breakdowns, and historical trends—are accurate and up-to-date. This transition from mock to live data is a critical next step in delivering a truly functional and impactful environmental monitoring tool.
 
 ## Getting Started
 
