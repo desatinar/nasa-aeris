@@ -74,7 +74,7 @@ Theme switcher (Light/Dark mode), high-contrast toggle, and keyboard navigation 
 
 ---
 
-##Future Improvements
+## Future Improvements
 
 ### 1. User Interaction and Community Reporting:
 Allow users to report real-time environmental events, such as fires, gas leaks, or other local pollution sources. These community inputs could enrich the accuracy of air quality data and make the app more participatory.
