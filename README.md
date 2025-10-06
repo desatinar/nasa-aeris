@@ -20,6 +20,11 @@ Aeris is an air quality monitoring dashboard created for the **2025 NASA Space A
 
 ---
 
+## Backend Information
+
+The backend of this project is stored in a separate folder on Google Drive. Due to unexpected issues with the satellite data during the hackathon, we were unable to implement it within the main application.
+For more details about the backend structure and functionalities, please read the README file included inside the backend folder.
+
 ## Core Features
 
 * **Interactive Map:** Visually displays real-time air quality data for the user's local area with color-coded zones.
