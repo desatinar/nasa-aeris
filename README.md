@@ -9,7 +9,7 @@
 
 **A modern, accessible web application for real-time air quality monitoring and forecasting**
 
-[Live Demo](#) • [Documentation](./DOCUMENTATION.md) • [Contributing](#contributing)
+[Live Demo](https://nasa-aeris-bno6pw5j4-desatinars-projects.vercel.app/) • [Documentation](./DOCUMENTATION.md) • [Contributing](#contributing)
 
 </div>
 
@@ -17,7 +17,9 @@
 
 ## 🌍 Overview
 
-**Aeris** is a sophisticated air quality monitoring dashboard that transforms complex environmental data into clear, actionable insights. Built with React and powered by NASA AERIS-inspired principles, the application provides real-time air quality measurements, historical trend analysis, and AI-powered forecasts through an intuitive, map-based interface.
+**Aeris** is a sophisticated air quality monitoring dashboard conceived during the **2025 NASA Space Apps Challenge**. The application transforms complex environmental data into clear, actionable insights for two critical user groups: **individuals with respiratory conditions** (asthma, COPD, allergies) and **outdoor athletes** (runners, cyclists, hikers).
+
+Built with React and powered by NASA AERIS-inspired atmospheric research principles, Aeris provides real-time air quality measurements, historical trend analysis, and AI-powered forecasts through an intuitive, map-based interface.
 
 ### ✨ Key Features
 
@@ -138,12 +140,13 @@ License to be determined. This project is developed for environmental monitoring
 
 ## 🙏 Acknowledgments
 
-Inspired by NASA's AERIS program and built with open-source technologies:
+Born from the **2025 NASA Space Apps Challenge** and inspired by NASA's AERIS program:
 
-- NASA AERIS for atmospheric research insights
-- OpenStreetMap for mapping data
-- OpenAQ for air quality data accessibility
-- The React and Leaflet.js communities
+- **NASA Space Apps Challenge 2025** for the platform and mission
+- **NASA AERIS Program** for atmospheric research insights
+- **OpenStreetMap** for mapping data
+- **OpenAQ** for air quality data accessibility
+- **React and Leaflet.js communities** for exceptional open-source tools
 
 ---
 
@@ -151,14 +154,15 @@ Inspired by NASA's AERIS program and built with open-source technologies:
 
 For questions or support:
 
-- **Issues:** [GitHub Issues](https://github.com/your-username/nasa-aeris/issues)
-- **Email:** your-email@example.com
+- **Issues:** [GitHub Issues](https://github.com/desatinar/nasa-aeris/issues)
+- **Email:** astro.rec00@gmail.com
 
 ---
 
 <div align="center">
 
-**Built with 💙 for a cleaner, healthier planet**
+**Built with 💙 for a cleaner, healthier planet**  
+*A 2025 NASA Space Apps Challenge Project*
 
 [⬆ Back to Top](#aeris--air-quality-monitoring-dashboard)
 
